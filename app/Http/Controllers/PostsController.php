@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Post;
 use App\Tag;
+use App\User;
 use Illuminate\Http\Request;
-
+use Auth;
 class PostsController extends Controller
 {
     /**
@@ -17,7 +18,6 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::all();
-
         return view('admin.posts.index')->with('posts',$posts);
     }
 
@@ -58,9 +58,9 @@ class PostsController extends Controller
         'content' => $request->content,
         'featured'=> 'uploads/'.$new_featured_name,
         'category_id'=>$request->category_id,
+        'user_id' => Auth::user()->id,
         'slug' => str_slug($request->title)
       ]);
-
       $post->tags()->attach($request->tags);
       $post->save();
       return redirect()->route('post.index');

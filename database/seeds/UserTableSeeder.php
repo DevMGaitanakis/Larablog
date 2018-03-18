@@ -12,8 +12,8 @@ class UserTableSeeder extends Seeder
     public function run()
     {
       $user =  App\User::create([
-          'name' => 'admin',
-          'email' => 'admin@admin.gr',
+          'name' => 'fro',
+          'email' => 'fro@fro.gr',
           'admin' => 1,
           'password' => bcrypt('password')
         ]);
@@ -25,6 +25,22 @@ class UserTableSeeder extends Seeder
             'facebook' => 'facebook profile',
             'youtube' => 'youtube profile'
           ]);
+
+          $user =  App\User::create([
+              'name' => 'Voras',
+              'email' => 'voras@voras.gr',
+              'admin' => 1,
+              'password' => bcrypt('password')
+            ]);
+
+            App\Profile::create([
+                'user_id' => $user->id,
+                'avatar' => 'uploads/avatars/avatar.jpg',
+                'about' => 'lorem',
+                'facebook' => 'facebook profile',
+                'youtube' => 'youtube profile'
+              ]);
+
     }
 
 

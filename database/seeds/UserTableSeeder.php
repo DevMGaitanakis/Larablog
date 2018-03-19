@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
 
         App\Profile::create([
             'user_id' => $user->id,
-            'avatar' => 'uploads/avatars/avatar.jpg',
+            'avatar' => 'uploads/avatars/devF.jpg',
             'about' => 'lorem',
             'facebook' => 'facebook profile',
             'youtube' => 'youtube profile'
@@ -35,7 +35,7 @@ class UserTableSeeder extends Seeder
 
             App\Profile::create([
                 'user_id' => $user->id,
-                'avatar' => 'uploads/avatars/avatar.jpg',
+                'avatar' => 'uploads/avatars/devX.png',
                 'about' => 'lorem',
                 'facebook' => 'facebook profile',
                 'youtube' => 'youtube profile'

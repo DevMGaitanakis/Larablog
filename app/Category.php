@@ -8,8 +8,10 @@ class Category extends Model
 {
 
   public function posts(){
-
     return $this->hasMany('App\Post');
   }
-  
+  public function subCategory(){
+    return $this->hasMany('App\SubCategory');
+  }
+
 }

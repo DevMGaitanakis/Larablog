@@ -68,19 +68,19 @@
         </nav>
     </div>
 
-    <div class="container">
+    <div class="fluid-container">
       <div class="row">
 @if(Auth::check())
-<div class="col-lg-4">
+<div class="col-lg-2">
   <ul class="list-group">
     <li class="list-group-item">
       <a href="{{route('post.create')}}">Create New Post</a>
     </li>
     <li class="list-group-item">
-      <a href="{{route('post.index')}}">View Post</a>
+      <a href="{{route('post.index')}}">My Posts</a>
     </li>
     <li class="list-group-item">
-      <a href="{{route('post.trashed')}}">Trashed Post</a>
+      <a href="{{route('post.trashed')}}">Trashed Posts</a>
     </li>
     <li class="list-group-item">
       <a href="{{route('category.create')}}">Create New Category</a>
@@ -106,7 +106,7 @@
   </ul>
 </div>
 @endif
-    <div class="col-lg-8">
+    <div class="col-lg-10">
       @yield('content')
     </div>
 

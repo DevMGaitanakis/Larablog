@@ -88,7 +88,7 @@
 <div class="content-wrapper">
     @include('includes.header')
     <div class="header-spacer"></div>
-    <div class="container">afagsgsdadadsa
+    <div class="container">
           <div class="row first-section">
               <div class="col-lg-6">
                 <div class="article-boxes-after-head">

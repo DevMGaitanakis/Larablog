@@ -74,39 +74,45 @@
 <div class="col-lg-2">
   <ul class="list-group">
     <li class="list-group-item">
-      <a href="{{route('post.create')}}">Create New Post</a>
+      <a href="{{route('post.index')}}">My Posts</a>
     </li>
     <li class="list-group-item">
-      <a href="{{route('post.index')}}">My Posts</a>
+      <a href="{{route('post.create')}}">Create New Post</a>
     </li>
     <li class="list-group-item">
       <a href="{{route('post.trashed')}}">Trashed Posts</a>
     </li>
-    <li class="list-group-item">
-      <a href="{{route('category.create')}}">Create New Category</a>
-    </li>
-    <li class="list-group-item">
-      <a href="{{route('category.index')}}">View Categories</a>
-    </li>
-    <li class="list-group-item">
-      <a href="{{route('tag.create')}}">Create New Tag</a>
-    </li>
-    <li class="list-group-item">
-      <a href="{{route('tag.index')}}">View Tags</a>
-    </li>
-    <li class="list-group-item">
-      <a href="{{route('user.index')}}">View Users</a>
-    </li>
-    <li class="list-group-item">
-      <a href="{{route('user.create')}}">Create Users</a>
-    </li>
-    <li class="list-group-item">
-      <a href="{{route('settings.index')}}">Settings</a>
-    </li>
   </ul>
+<ul class="list-group">
+  <li class="list-group-item">
+    <a href="{{route('category.create')}}">Create New Category</a>
+  </li>
+  <li class="list-group-item">
+    <a href="{{route('category.index')}}">View Categories</a>
+  </li>
+  <li class="list-group-item">
+    <a href="{{route('subcategory.create')}}">Create New SubCategory</a>
+  </li>
+  <li class="list-group-item">
+    <a href="{{route('subcategory.index')}}">View SubCategories</a>
+  </li>
+</ul>
+<ul class="list-group">
+  <li class="list-group-item">
+    <a href="{{route('user.create')}}">Create Users</a>
+  </li>
+  <li class="list-group-item">
+    <a href="{{route('user.index')}}">View Users</a>
+  </li>
+</ul>
+<ul class="list-group">
+  <li class="list-group-item">
+    <a href="{{route('settings.index')}}">Settings</a>
+  </li>
+</ul>
 </div>
 @endif
-    <div class="col-lg-10">
+    <div class="col-lg-6">
       @yield('content')
     </div>
 

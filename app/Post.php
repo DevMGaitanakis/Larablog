@@ -9,7 +9,7 @@ class Post extends Model
   use softDeletes;
 
   protected $fillable = [
-      'title', 'featured', 'category_id','content','slug','user_id'
+      'title', 'featured', 'category_id','content','slug','user_id','subcategory_id'
   ];
 
 protected $dates =['deleted_at'];
@@ -22,6 +22,9 @@ public function getFeaturedAttribute($featured){
 
   public function category(){
     return $this->belongsTo('App\Category');
+  }
+  public function subCategory(){
+    return $this->belongsTo('App\SubCategory');
   }
   public function user(){
     return $this->belongsTo('App\User');

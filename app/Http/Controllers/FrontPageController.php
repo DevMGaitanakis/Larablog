@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Setting;
 use App\Category;
 use App\Post;
+use App\User;
+
 use Auth;
 
 class FrontPageController extends Controller
@@ -15,7 +17,6 @@ class FrontPageController extends Controller
     //  $d=Auth::user()->id;
 //     dd($d);
       $settings = Setting::first();
-
       return view('layouts.index')
       ->with('title',$settings->site_name)
       ->with('categories',Category::take(3)->get())
@@ -24,9 +25,16 @@ class FrontPageController extends Controller
       ->with('third_post',Post::orderBy('created_at','desc')->skip(2)->take(1)->get()->first())
       ->with('fourth_post',Post::orderBy('created_at','desc')->skip(3)->take(1)->get()->first())
       ->with('fifth_post',Post::orderBy('created_at','desc')->skip(4)->take(1)->get()->first());
-
-
     }
 
-
-}
+      public function viewPost($slug){
+          $settings = Setting::first();
+          $post = Post::where('slug',$slug)->first();
+          $author = User::where('id',$post->user_id)->first();
+          return view('layouts.viewPost')
+          ->with('post',$post)
+          ->with('author',$author->name)
+          ->with('title',$settings->site_name)
+          ->with('categories',Category::take(3)->get());
+        }
+  }

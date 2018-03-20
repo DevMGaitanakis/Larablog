@@ -18,6 +18,7 @@ class PostTableSeeder extends Seeder
         'user_id'=>1,
         'slug'=>'asd-ads-asd',
         'category_id'=>1,
+        'subcategory_id'=>1,
         'featured'=>'uploads/dummy1.jpg',
       ]);
       $posts = App\Post::create([
@@ -26,6 +27,7 @@ class PostTableSeeder extends Seeder
         'user_id'=>2,
         'slug'=>'asd-ads-asd',
         'category_id'=>2,
+        'subcategory_id'=>1,
         'featured'=>'uploads/dummy2.jpg',
       ]);
       $posts = App\Post::create([
@@ -34,6 +36,7 @@ class PostTableSeeder extends Seeder
         'user_id'=>1,
         'slug'=>'asd-ads-asd',
         'category_id'=>3,
+        'subcategory_id'=>2,
         'featured'=>'uploads/dummy3.jpg',
       ]);
       $posts = App\Post::create([
@@ -42,6 +45,7 @@ class PostTableSeeder extends Seeder
         'user_id'=>2,
         'slug'=>'asd-ads-asd',
         'category_id'=>2,
+        'subcategory_id'=>3,
         'featured'=>'uploads/dummy2.jpg',
       ]);
       $posts = App\Post::create([
@@ -50,6 +54,7 @@ class PostTableSeeder extends Seeder
         'user_id'=>1,
         'slug'=>'asd-ads-asd',
         'category_id'=>2,
+        'subcategory_id'=>1,
         'featured'=>'uploads/dummy1.jpg',
       ]);
       $posts = App\Post::create([
@@ -58,6 +63,7 @@ class PostTableSeeder extends Seeder
         'user_id'=>1,
         'slug'=>'asd-ads-asd',
         'category_id'=>3,
+        'subcategory_id'=>2,
         'featured'=>'uploads/dummy1.jpg',
       ]);
       $posts = App\Post::create([
@@ -66,6 +72,7 @@ class PostTableSeeder extends Seeder
         'user_id'=>1,
         'slug'=>'asd-ads-asd',
         'category_id'=>1,
+        'subcategory_id'=>3,
         'featured'=>'uploads/dummy3.jpg',
       ]);
       $posts = App\Post::create([
@@ -74,6 +81,7 @@ class PostTableSeeder extends Seeder
         'user_id'=>1,
         'slug'=>'asd-ads-asd',
         'category_id'=>2,
+        'subcategory_id'=>1,
         'featured'=>'uploads/dummy2.jpg',
       ]);
 

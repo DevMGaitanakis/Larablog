@@ -39,12 +39,19 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'auth'],function(){
   Route::get('/category/delete/{id}', 'CategoriesController@destroy')->name('category.delete');
   Route::post('/category/update/{id}', 'CategoriesController@update')->name('category.update');
 
-  Route::get('/tag/index', 'TagsController@index')->name('tag.index');
-  Route::get('/tag/create', 'TagsController@create')->name('tag.create');
-  Route::post('/tag/store', 'TagsController@store')->name('tag.store');
-  Route::get('/tag/edit/{id}', 'TagsController@edit')->name('tag.edit');
-  Route::get('/tag/delete/{id}', 'TagsController@destroy')->name('tag.delete');
-  Route::post('/tag/update/{id}', 'TagsController@update')->name('tag.update');
+  Route::get('/subcategory/index', 'SubCategoriesController@index')->name('subcategory.index');
+  Route::get('/subcategory/create', 'SubCategoriesController@create')->name('subcategory.create');
+  Route::post('/subcategory/store', 'SubCategoriesController@store')->name('subcategory.store');
+  Route::get('/subcategory/edit/{id}', 'SubCategoriesController@edit')->name('subcategory.edit');
+  Route::get('/subcategory/delete/{id}', 'SubCategoriesController@destroy')->name('subcategory.delete');
+  Route::post('/subcategory/update/{id}', 'SubCategoriesController@update')->name('subcategory.update');
+
+  // Route::get('/tag/index', 'TagsController@index')->name('tag.index');
+  // Route::get('/tag/create', 'TagsController@create')->name('tag.create');
+  // Route::post('/tag/store', 'TagsController@store')->name('tag.store');
+  // Route::get('/tag/edit/{id}', 'TagsController@edit')->name('tag.edit');
+  // Route::get('/tag/delete/{id}', 'TagsController@destroy')->name('tag.delete');
+  // Route::post('/tag/update/{id}', 'TagsController@update')->name('tag.update');
 
 
   Route::get('/user/index','UsersController@index')->name('user.index');

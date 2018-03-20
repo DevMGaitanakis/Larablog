@@ -25,9 +25,18 @@
          <input type="file" name="featured" class="form-control">
       </div>
       <div class="form-group">
+        <label for="Category">Category</label>
          <select name="category_id" id="category" class="form-control">
            @foreach($categories as $category)
             <option value="{{$category->id}}">{{$category->name}}</option>
+           @endforeach
+         </select>
+      </div>
+      <div class="form-group">
+        <label for="Category">Sub Category</label>
+         <select name="subcategory_id" id="subcategory_id" class="form-control">
+           @foreach($sub_categories as $sub_category)
+            <option value="{{$sub_category->id}}">{{$sub_category->name}}</option>
            @endforeach
          </select>
       </div>

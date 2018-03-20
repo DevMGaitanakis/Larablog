@@ -93,7 +93,7 @@
               <div class="col-lg-6">
                 <div class="article-boxes-after-head">
                   <div class="post-title">
-                    <a href="#">{{$first_post->title}}</a>
+                    <a href="{{ route('viewPost.page',['slug' => $first_post->slug]) }}">{{$first_post->title}} aa</a>
                   </div>
                  <img src="{{$first_post->featured}}" alt="" class="img-responsive first-post-img">
                    <div class="post-additional-info first-posts">
@@ -105,7 +105,7 @@
                        </span>
                        <span class="category">
                            <i class="seoicon-tags"></i>
-                           <a href="#">{{$first_post->category->name}}</a>
+                           <a href="{{ route('viewPost.page',['slug' => $first_post->slug]) }}">{{$first_post->category->name}}</a>
                        </span>
                        <span class="post__comments">
                            <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a>
@@ -119,13 +119,13 @@
                   <div class="col-lg-12"  style="margin-bottom:20px">
                       <div class="article-boxes-after-head">
                         <div class="post-title">
-                          <a href="#">{{$second_post->title}}</a>
+                          <a href="{{ route('viewPost.page',['slug' => $second_post->slug]) }}">{{$second_post->title}}</a>
                         </div>
                     <img src="{{$second_post->featured}}" alt="" class="img-responsive second-post-img">
                     <div class="post-additional-info first-posts">
                         <span class="category">
                             <i class="seoicon-tags"></i>
-                            <a href="#">{{$second_post->category->name}}</a>
+                            <a href="{{ route('viewPost.page',['slug' => $first_post->slug]) }}">{{$second_post->category->name}}</a>
                         </span>
                         <span class="post__comments">
                             <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a>
@@ -138,13 +138,13 @@
                   <div class="col-lg-12">
                       <div class="article-boxes-after-head">
                         <div class="post-title">
-                          <a href="#">{{$third_post->title}}</a>
+                          <a href="{{ route('viewPost.page',['slug' => $third_post->slug]) }}">{{$third_post->title}}</a>
                         </div>
                     <img src="{{$third_post->featured}}" alt="" class="img-responsive third-post-img">
                     <div class="post-additional-info first-posts">
                         <span class="category">
                             <i class="seoicon-tags"></i>
-                            <a href="#">{{$third_post->category->name}}</a>
+                            <a href="{{ route('viewPost.page',['slug' => $third_post->slug]) }}">{{$third_post->category->name}}</a>
                         </span>
                         <span class="post__comments">
                             <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a>
@@ -176,7 +176,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title ">
-                                        <a href="15_blog_details.html">{{$fourth_post->title}}</a>
+                                        <a href="{{ route('viewPost.page',['slug' => $fourth_post->slug]) }}">{{$fourth_post->title}}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -193,7 +193,7 @@
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{$fourth_post->category->name}}</a>
+                                            <a href="{{ route('viewPost.page',['slug' => $fourth_post->slug]) }}">{{$fourth_post->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -224,7 +224,7 @@
                         <div class="post__content">
                             <div class="post__content-info">
                                     <h2 class="post__title entry-title ">
-                                        <a href="15_blog_details.html">{{$fifth_post->title}}</a>
+                                        <a href="{{ route('viewPost.page',['slug' => $fifth_post->slug]) }}">{{$fifth_post->title}}</a>
                                     </h2>
                                     <div class="post-additional-info">
                                         <span class="post__date">
@@ -279,7 +279,7 @@
                                     <div class="case-item__thumb">
                                         <img src="{{$post->featured}}" alt="our case">
                                     </div>
-                                    <h6 class="case-item__title"><a href="#">{{$post->title}}</a></h6>
+                                    <h6 class="case-item__title"><a href="{{ route('viewPost.page',['slug' => $post->slug]) }}">{{$post->title}}</a></h6>
                                 </div>
                             </div>
                     </div>

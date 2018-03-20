@@ -15,9 +15,10 @@
 Auth::routes();
 
 Route::get('/test',function(){
-  return App\User::find(1)->profile;
 });
+
 Route::get('/','FrontPageController@index')->name('front.page');
+Route::get('/{slug}','FrontPageController@viewPost')->name('viewPost.page');
 
 Route::group(['prefix' => 'admin' , 'middleware' => 'auth'],function(){
 

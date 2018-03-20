@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\SubCategory;
+use App\Category;
+use Session;
 class SubCategoriesController extends Controller
 {
     /**
@@ -13,7 +16,8 @@ class SubCategoriesController extends Controller
      */
     public function index()
     {
-        //
+
+        return view('admin.subcategories.index')->with('subcategories',SubCategory::all());
     }
 
     /**
@@ -23,7 +27,7 @@ class SubCategoriesController extends Controller
      */
     public function create()
     {
-        //
+       return view('admin.subcategories.create')->with('categories',Category::all());
     }
 
     /**
@@ -34,7 +38,17 @@ class SubCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request,[
+        'name' => 'required',
+        'category_id'=>'required'
+      ]);
+
+      $category = new SubCategory;
+      $category->name = $request->name;
+      $category->category_id = $request->category_id;
+      $category->save();
+      Session::flash('success','Your SubCategory has been saved');
+      return redirect()->back();
     }
 
     /**
@@ -56,7 +70,9 @@ class SubCategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = SubCategory::find($id);
+
+        return view('admin.subcategories.edit')->with('subcategory',$category);
     }
 
     /**
@@ -68,7 +84,10 @@ class SubCategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $category=SubCategory::find($id);
+      $category->name = $request->name;
+      $category->save();
+      return redirect()->back();
     }
 
     /**
@@ -79,6 +98,13 @@ class SubCategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $category = SubCategory::find($id);
+
+        $category->delete();
+
+        return redirect()->back();
+
+
     }
 }

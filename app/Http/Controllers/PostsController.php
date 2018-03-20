@@ -8,6 +8,7 @@ use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
+use App\SubCategory;
 class PostsController extends Controller
 {
     /**
@@ -18,6 +19,7 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::all()->where('user_id',Auth::user()->id);
+
         return view('admin.posts.index')->with('posts',$posts);
     }
 
@@ -28,7 +30,11 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create')->with('categories',Category::all())->with('tags',Tag::all());
+        return view('admin.posts.create')
+        ->with('categories',Category::all())
+        ->with('tags',Tag::all())
+        ->with('sub_categories',SubCategory::all())
+        ;
     }
 
     /**
@@ -58,6 +64,7 @@ class PostsController extends Controller
         'content' => $request->content,
         'featured'=> 'uploads/'.$new_featured_name,
         'category_id'=>$request->category_id,
+        'subcategory_id'=>$request->subcategory_id,
         'user_id' => Auth::user()->id,
         'slug' => str_slug($request->title)
       ]);

@@ -31,7 +31,9 @@ class FrontPageController extends Controller
           $settings = Setting::first();
           $post = Post::where('slug',$slug)->first();
           $author = User::where('id',$post->user_id)->first();
+          $categoryposts = Post::where('category_id',$post->category_id)->get();
           return view('layouts.viewPost')
+          ->with('samecategoryposts',$categoryposts)
           ->with('post',$post)
           ->with('author',$author->name)
           ->with('title',$settings->site_name)
